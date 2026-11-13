@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Find study resources, plan sessions and track progress with StudentStudy Hub.">
+	<meta name="theme-color" content="#f6f7f2">
+	<title>StudentStudy Hub</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script defer src="js/data.js"></script>
+	<script defer src="js/storage.js"></script>
+	<script defer src="js/resources.js"></script>
+	<script defer src="js/checklist.js"></script>
+	<script defer src="js/planner.js"></script>
+	<script defer src="js/discussions.js"></script>
+	<script defer src="js/app.js"></script>
+</head>
+<body>
+	<a class="skip-link" href="#main">Skip to main content</a>
+	<div class="shell">
+		<aside class="sidebar" aria-label="Student workspace">
+			<a class="brand" href="#dashboard" aria-label="StudentStudy Hub home">
+				<span class="brand-mark" aria-hidden="true">S</span>
+				<span class="brand-name">StudentStudy<span>HUB / YOUR STUDY SPACE</span></span>
+			</a>
+			<p class="nav-label">WORKSPACE</p>
+			<nav id="navigation" aria-label="Main navigation"></nav>
+			<div class="side-note">
+				<span class="note-spark" aria-hidden="true">✧</span>
+				<strong>A little progress counts.</strong>
+				<p>One topic, one resource,<br>one step at a time.</p>
+			</div>
+			<div class="profile">
+				<span class="avatar" id="avatar" aria-hidden="true">L</span>
+				<div class="profile-copy"><strong id="profile-name">Luxolo</strong><small>Student workspace</small></div>
+				<button class="icon-button" type="button" data-action="profile" aria-label="Change display name" title="Change display name">✎</button>
+			</div>
+		</aside>
+
+		<div class="workspace">
+			<header class="topbar">
+				<p class="breadcrumb">My workspace <span aria-hidden="true">/</span> <strong id="breadcrumb">Overview</strong></p>
+				<div class="topbar-actions">
+					<span class="demo-badge">Interactive prototype</span>
+					<button class="icon-button help-button" type="button" data-action="help" aria-label="Help and prototype information" title="Help">?</button>
+				</div>
+			</header>
+			<main id="main" tabindex="-1"></main>
+			<footer class="footer">StudentStudy Hub <span>Made for a more organised study day.</span></footer>
+		</div>
+	</div>
+
+	<div id="notice" class="notice" role="status" aria-live="polite" aria-atomic="true"></div>
+	<dialog id="dialog" aria-labelledby="dialog-title">
+		<div id="dialog-content"></div>
+	</dialog>
+</body>
+</html>
