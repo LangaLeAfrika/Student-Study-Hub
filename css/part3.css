@@ -1,0 +1,125 @@
+/* Part 3: accessibility preferences and emotionally supportive feedback */
+.accessibility-controls {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.accessibility-controls button {
+	min-width: 40px;
+	min-height: 40px;
+	padding: 6px 10px;
+	font-weight: 750;
+}
+
+.accessibility-controls button[aria-pressed="true"] {
+	border-color: var(--green);
+	background: var(--green-soft);
+	color: var(--green-dark);
+}
+
+.encouragement-panel {
+	display: flex;
+	align-items: flex-start;
+	gap: 14px;
+	margin: 0 0 22px;
+	padding: 17px 19px;
+	border: 1px solid #cbd8c8;
+	border-left: 4px solid var(--green);
+	border-radius: 9px;
+	background: #eef4ec;
+	color: #243b36;
+}
+
+.encouragement-icon {
+	display: grid;
+	width: 36px;
+	height: 36px;
+	flex: 0 0 36px;
+	place-items: center;
+	border-radius: 50%;
+	background: #dce9d8;
+	color: #184735;
+	font-size: 20px;
+}
+
+.encouragement-copy h2 {
+	margin: 0 0 4px;
+	font-size: 16px;
+}
+
+.encouragement-copy p {
+	margin: 0;
+	font-size: 13px;
+}
+
+.encouragement-copy .encouragement-progress {
+	margin-top: 7px;
+	font-size: 12px;
+}
+
+html.large-text body {
+	font-size: 1.12rem;
+}
+
+html.large-text main p,
+html.large-text main label,
+html.large-text main input,
+html.large-text main select,
+html.large-text main textarea,
+html.large-text main button,
+html.large-text #navigation a {
+	font-size: 1.08em;
+}
+
+html.high-contrast {
+	--ink: #101010;
+	--muted: #303030;
+	--green: #004b2b;
+	--green-dark: #00351e;
+	--green-soft: #d8eadc;
+	--line: #555;
+	--paper: #fff;
+	--focus: #b00020;
+}
+
+html.high-contrast button,
+html.high-contrast input,
+html.high-contrast select,
+html.high-contrast textarea,
+html.high-contrast .panel,
+html.high-contrast .resource-card,
+html.high-contrast .discussion-post {
+	border-width: 2px;
+	border-color: #333;
+}
+
+html.high-contrast a {
+	color: #003b91;
+	text-decoration: underline;
+}
+
+html.high-contrast .encouragement-panel {
+	border: 2px solid #00351e;
+	border-left-width: 6px;
+	background: #fff;
+	color: #101010;
+}
+
+@media (max-width: 700px) {
+	.accessibility-controls button {
+		min-width: 38px;
+		padding: 5px 8px;
+	}
+
+	.encouragement-panel {
+		padding: 14px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.encouragement-panel,
+	.accessibility-controls button {
+		transition: none !important;
+	}
+}
