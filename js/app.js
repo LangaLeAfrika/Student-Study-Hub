@@ -153,13 +153,42 @@ function closeDialog() {
 	if (dialog.open) dialog.close();
 }
 
+
 function formError(form, fieldName, message) {
-	const field = form.elements.namedItem(fieldName);
-	field?.setAttribute('aria-invalid', 'true');
-	const error = form.querySelector('[role="alert"]');
-	if (error) error.textContent = message;
-	field?.focus();
+    const field = form.elements.namedItem(fieldName);
+
+    field?.setAttribute('aria-invalid', 'true');
+
+    const error = form.querySelector('[role="alert"]');
+
+    if (error) {
+        error.textContent = message;
+    }
+
+    field?.focus();
 }
+
+// Clear validation errors when the student
+// starts correcting the affected field.
+function clearFieldError(event) {
+    const field = event.target;
+
+    if (!field.matches('input, textarea, select')) return;
+
+    if (field.getAttribute('aria-invalid') === 'true') {
+        field.removeAttribute('aria-invalid');
+
+        const error = field.form?.querySelector('[role="alert"]');
+
+        if (error) {
+            error.textContent = '';
+        }
+    }
+}
+
+document.addEventListener('input', clearFieldError);
+document.addEventListener('change', clearFieldError);
+
 
 function renderItemForm(kind, item = {}) {
 	const isTask = kind === 'task';
